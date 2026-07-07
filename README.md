@@ -56,6 +56,7 @@ Here is the list of all utilities:
 - [Random String Generator](https://jam.dev/utilities/random-string-generator)
 - [CSV file viewer](https://jam.dev/utilities/csv-file-viewer)
 - [JSONL Validator](https://jam.dev/utilities/jsonl-validator)
+- [File Integrity Checker](https://jam.dev/utilities/file-integrity-checker)
 
 ### Built With
 
