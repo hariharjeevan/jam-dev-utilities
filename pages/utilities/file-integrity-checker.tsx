@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import { Card } from "@/components/ds/CardComponent";
 import { Button } from "@/components/ds/ButtonComponent";
@@ -15,9 +15,6 @@ import GitHubContribution from "@/components/GitHubContribution";
 import FileIntegrityCheckerSEO from "@/components/seo/FileIntegrityCheckerSEO";
 import { Flame } from "lucide-react";
 
-// hashFileChunked hashes only the algorithms passed to it in a single pass;
-// only the selected algorithm is computed at a time, so switching algorithms
-// after a hash exists triggers a re-read/re-hash of the file.
 const ALGORITHMS = ["sha256", "sha512", "md5"] as const;
 type Algorithm = (typeof ALGORITHMS)[number];
 
@@ -42,10 +39,15 @@ const algorithmOptions: AlgorithmOption[] = ALGORITHMS.map((algo) => ({
 
 type HashResults = Record<Algorithm, string>;
 
+function throwIfAborted(signal: AbortSignal) {
+  if (signal.aborted) throw new DOMException("Aborted", "AbortError");
+}
+
 async function hashFileChunked(
   file: File,
   algorithms: readonly Algorithm[],
-  onProgress: (percent: number) => void
+  onProgress: (percent: number) => void,
+  signal: AbortSignal
 ): Promise<HashResults> {
   const hashes = algorithms.reduce(
     (acc, algo) => {
@@ -57,8 +59,10 @@ async function hashFileChunked(
 
   let offset = 0;
   while (offset < file.size) {
+    throwIfAborted(signal);
     const chunk = file.slice(offset, offset + CHUNK_SIZE);
     const buffer = Buffer.from(await chunk.arrayBuffer());
+    throwIfAborted(signal);
     for (const algo of algorithms) {
       hashes[algo].update(buffer);
     }
@@ -87,8 +91,13 @@ export default function FileIntegrityChecker() {
   const [selectedAlgorithm, setSelectedAlgorithm] =
     useState<Algorithm>("sha256");
   const { buttonText, handleCopy } = useCopyToClipboard();
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const computeHash = useCallback(async (file: File, algorithm: Algorithm) => {
+    abortControllerRef.current?.abort();
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
     setError("");
     setVerifyInput("");
     setProgress(0);
@@ -96,18 +105,22 @@ export default function FileIntegrityChecker() {
     setIsHashing(true);
 
     try {
-      const hashes = await hashFileChunked(file, [algorithm], (percent) => {
-        setProgress(percent);
-      });
+      const hashes = await hashFileChunked(
+        file,
+        [algorithm],
+        (percent) => setProgress(percent),
+        controller.signal
+      );
       setResults(hashes);
     } catch (err) {
+      if (err instanceof DOMException && err.name === "AbortError") return;
       setError(
         err instanceof Error
           ? `Failed to hash file: ${err.message}`
           : "An unexpected error occurred while hashing the file."
       );
     } finally {
-      setIsHashing(false);
+      if (!controller.signal.aborted) setIsHashing(false);
     }
   }, []);
 
