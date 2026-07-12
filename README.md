@@ -130,10 +130,10 @@ You can also run the application using Docker:
 
 ```bash
 # Build and start the container
-docker-compose up --build
+docker compose up --build
 
 # Run in detached mode
-docker-compose up -d
+docker compose up -d
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
