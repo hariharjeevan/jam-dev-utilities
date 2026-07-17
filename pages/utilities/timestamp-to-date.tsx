@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
 import TimestampSEO from "@/components/seo/TimestampSEO";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import { formatOutput } from "../../components/utils/timestamp-to-date.utils";
 
@@ -80,7 +80,7 @@ export default function TimestampToDate() {
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="timestamp-to-date" />
 
       <section className="container max-w-2xl">
         <TimestampSEO />

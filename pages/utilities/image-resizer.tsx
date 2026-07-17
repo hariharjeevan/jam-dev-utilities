@@ -5,7 +5,7 @@ import { Button } from "@/components/ds/ButtonComponent";
 import { Label } from "@/components/ds/LabelComponent";
 import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import {
   calculateCropDimensions,
@@ -966,7 +966,7 @@ export default function ImageResize() {
       </section>
 
       <GitHubContribution username="EduardoDePatta" />
-      <CallToActionGrid />
+      <JamCallToAction tool="image-resizer" />
     </main>
   );
 }

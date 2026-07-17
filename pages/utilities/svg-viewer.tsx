@@ -5,7 +5,7 @@ import { Card } from "@/components/ds/CardComponent";
 import { Label } from "@/components/ds/LabelComponent";
 import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import GitHubContribution from "@/components/GitHubContribution";
 import { SVGUploadComponent } from "@/components/ds/SVGUploadComponent";
@@ -171,7 +171,7 @@ export default function SVGViewer() {
       </section>
 
       <GitHubContribution username="samiashi" />
-      <CallToActionGrid />
+      <JamCallToAction tool="svg-viewer" />
     </main>
   );
 }

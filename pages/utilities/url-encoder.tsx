@@ -9,7 +9,7 @@ import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
 import UrlEncoderSEO from "@/components/seo/UrlEncoderSEO";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 
 export default function URLEncoder() {
@@ -99,7 +99,7 @@ export default function URLEncoder() {
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="url-encoder" />
 
       <section className="container max-w-2xl">
         <UrlEncoderSEO />

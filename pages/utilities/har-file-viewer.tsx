@@ -1,4 +1,4 @@
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import { CMDK } from "@/components/CMDK";
 import { Button } from "@/components/ds/ButtonComponent";
 import { Card } from "@/components/ds/CardComponent";
@@ -428,7 +428,7 @@ export default function HARFileViewer() {
         </>
       )}
 
-      <CallToActionGrid />
+      <JamCallToAction tool="har-file-viewer" />
       <section className="container max-w-2xl">
         <HarFileViewerSEO />
       </section>

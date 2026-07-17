@@ -12,7 +12,7 @@ export default function Home() {
         title="Open Source Developer Tools | Free Utilities"
         description="Jam exists to make developers lives easier. Here are fast, free, open source, ad-free tools. Simplify your coding tasks with utilities like Base64 encode/decode, URL encode/decode, HEX to RGB converter, Timestamp to Date converter, and more."
       />
-      <Header />
+      <Header showBackLink={false} />
 
       <div className="container text-center mb-14">
         <div className="flex justify-center items-center mb-4">

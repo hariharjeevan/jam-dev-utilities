@@ -8,7 +8,7 @@ export function ThemeToggle() {
 
   return (
     <Button
-      className="min-h-10 min-w-10"
+      className="min-h-10 min-w-10 rounded-xl"
       variant="outline"
       size="icon"
       onClick={() => {
