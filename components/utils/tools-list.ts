@@ -209,4 +209,10 @@ export const tools = [
       "View, search, and filter CSV, TSV or LOG files with color-coded severity levels. Quickly scan through logs with Datadog-inspired faceted filtering.",
     link: "/utilities/csv-file-viewer",
   },
+  {
+    title: "File integrity checker",
+    description:
+      "Generate SHA-256, SHA-512, and MD5 checksums for files of any size, then verify them against a known hash to confirm the file wasn't corrupted or altered in transit.",
+    link: "/utilities/file-integrity-checker",
+  },
 ];
