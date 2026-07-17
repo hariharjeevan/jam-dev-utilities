@@ -3,7 +3,7 @@ export interface JamBannerCopy {
   description: string;
 }
 
-export const JAM_URL = "https://jam.dev?ref=utils";
+export const JAM_URL = "https://jam.dev?ref=utils-banner";
 
 export const defaultBannerCopy: JamBannerCopy = {
   title: "Fix your next bug faster",
