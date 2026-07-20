@@ -13,8 +13,7 @@ export const defaultBannerCopy: JamBannerCopy = {
 
 const imageBannerCopy: JamBannerCopy = {
   title: "Prepping images for production?",
-  description:
-    "Jam captures pixel-perfect replays with device and browser info.",
+  description: "Jam captures screenshots with device and browser info.",
 };
 
 // Per-tool banner copy, keyed by the page slug under /utilities.
