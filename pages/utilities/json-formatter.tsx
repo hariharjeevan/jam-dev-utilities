@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
 import { CMDK } from "@/components/CMDK";
 import JsonFormatterSEO from "../../components/seo/JsonFormatterSEO";
-import CallToActionGrid from "../../components/CallToActionGrid";
+import JamCallToAction from "../../components/JamCallToAction";
 import Meta from "@/components/Meta";
 
 export default function JSONFormatter() {
@@ -69,7 +69,7 @@ export default function JSONFormatter() {
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="json-formatter" />
 
       <section className="container max-w-2xl">
         <JsonFormatterSEO />

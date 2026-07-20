@@ -9,7 +9,7 @@ import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
 import Base64SEO from "@/components/seo/Base64SEO";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import { fromBase64, toBase64 } from "@/components/utils/base-64.utils";
 
@@ -94,7 +94,7 @@ export default function Base64Encoder() {
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="base-64-encoder" />
 
       <section className="container max-w-2xl">
         <Base64SEO />

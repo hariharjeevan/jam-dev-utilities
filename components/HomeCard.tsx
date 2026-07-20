@@ -20,7 +20,9 @@ export default function HomeCard({ title, description, link }: HomeCardProps) {
         <CardContent>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
-          <Button variant="outline">Try it</Button>
+          <Button variant="outline" className="rounded-lg">
+            Try it
+          </Button>
         </CardContent>
       </Link>
     </Card>

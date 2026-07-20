@@ -9,7 +9,7 @@ import { Progress } from "@/components/ds/ProgressComponent";
 import { Checkbox } from "@/components/ds/CheckboxComponent";
 import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import { MultiFileUploadComponent } from "@/components/ds/MultiFileUploadComponent";
 import { DownloadIcon, TrashIcon, FileImageIcon } from "lucide-react";
@@ -420,7 +420,7 @@ export default function WebPConverter() {
       </section>
 
       <GitHubContribution username="copilot" />
-      <CallToActionGrid />
+      <JamCallToAction tool="webp-converter" />
 
       <section className="container max-w-2xl">
         <WebPConverterSEO />

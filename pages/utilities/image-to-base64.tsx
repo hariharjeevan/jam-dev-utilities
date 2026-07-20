@@ -7,7 +7,7 @@ import { Label } from "@/components/ds/LabelComponent";
 import Header from "@/components/Header";
 import { CMDK } from "@/components/CMDK";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import Meta from "@/components/Meta";
 import { ImageUploadComponent } from "@/components/ds/ImageUploadComponent";
 import ImageToBase64SEO from "@/components/seo/ImageToBase64SEO";
@@ -137,7 +137,7 @@ export default function ImageToBase64() {
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="image-to-base64" />
 
       <section className="container max-w-2xl">
         <ImageToBase64SEO />

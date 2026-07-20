@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 import { Checkbox } from "@/components/ds/CheckboxComponent";
 import { CMDK } from "@/components/CMDK";
 import { useCopyToClipboard } from "@/components/hooks/useCopyToClipboard";
-import CallToActionGrid from "@/components/CallToActionGrid";
+import JamCallToAction from "@/components/JamCallToAction";
 import CsvToJsonSEO from "@/components/seo/CsvToJsonSEO";
 import Meta from "@/components/Meta";
 import { convertCSVtoJSON } from "@/components/utils/csv-to-json.utils";
@@ -258,7 +258,7 @@ Bob,35,UK`;
         </Card>
       </section>
 
-      <CallToActionGrid />
+      <JamCallToAction tool="csv-to-json" />
 
       <section className="container max-w-2xl">
         <CsvToJsonSEO />
